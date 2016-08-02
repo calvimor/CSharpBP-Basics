@@ -34,8 +34,8 @@ namespace Acme.Biz.Tests
         {
             //Arrange
             var currentProduct = new Product(1, "Saw", "15-inch steel blade hand saw");            
-            var expected = "Hello Saw (1): 15-inch steel blade hand saw";
-
+            var expected = "Hello Saw (1): 15-inch steel blade hand saw" +
+                " Available on: ";
             //Act
             var actual = currentProduct.SayHello();
             //Assert
@@ -52,8 +52,8 @@ namespace Acme.Biz.Tests
                 ProductName = "Saw",
                 Description = "15-inch steel blade hand saw"
             };
-            var expected = "Hello Saw (1): 15-inch steel blade hand saw";
-
+            var expected = "Hello Saw (1): 15-inch steel blade hand saw" +
+                " Available on: ";
             //Act
             var actual = currentProduct.SayHello();
             //Assert
