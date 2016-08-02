@@ -17,6 +17,7 @@ namespace Acme.Biz
         public Product()
         {
             Console.WriteLine("Product instance created.");
+            //this.ProductVendor = new Vendor(); //second usage scenario but not for three (lazy loading)
         }
 
         public Product(int productId,
@@ -56,12 +57,29 @@ namespace Acme.Biz
             get { return description; }
             set { description = value; }
         }
+
+        //Related objects second case: always
+        private Vendor productVendor;
+
+        public Vendor ProductVendor
+        {
+            get {
+                if(productVendor == null)
+                {
+                    productVendor = new Vendor(); //third scenario lazy loading
+                }
+                return productVendor;
+            }
+            set { productVendor = value; }
+        }
+
         #endregion
 
         public string SayHello()
         {
-            var vendor = new Vendor();
-            vendor.SendWelcomeEmail("Message from Product instance ;)");
+            //Related objects first case: One method
+            //var vendor = new Vendor();
+            //vendor.SendWelcomeEmail("Message from Product instance ;)");
 
             var emailService = new EmailService();
             var confirmation = emailService.SendMessage("New Product",
