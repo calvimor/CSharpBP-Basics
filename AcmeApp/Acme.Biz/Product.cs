@@ -22,6 +22,7 @@ namespace Acme.Biz
             Console.WriteLine("Product instance created.");
             //this.ProductVendor = new Vendor(); //second usage scenario but not for three (lazy loading)
             this.MinimumPrice = .96m;
+            this.Category = "Tools";
         }
 
         public Product(int productId,
@@ -104,6 +105,9 @@ namespace Acme.Biz
             set { productVendor = value; }
         }
 
+        public string Category { get; set; }
+        public int SequenceNumber { get; set; } = 1;
+        
         public string ValidationMessage { get; private set; }
 
         #endregion
