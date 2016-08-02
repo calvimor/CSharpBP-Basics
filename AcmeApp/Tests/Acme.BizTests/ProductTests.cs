@@ -72,5 +72,18 @@ namespace Acme.Biz.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod()]
+        public void ConverterMetersToInchesTest()
+        {
+            //Arrange
+            var expected = 78.74;
+
+            //Act
+            var actual = 2 * Product.InchesPerMeter;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
         }
+    }
 }

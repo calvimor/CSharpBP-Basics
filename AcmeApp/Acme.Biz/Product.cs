@@ -13,6 +13,8 @@ namespace Acme.Biz
     /// </summary>
     public class Product
     {
+        public const double InchesPerMeter = 39.37;
+
         #region Constructors
         public Product()
         {
